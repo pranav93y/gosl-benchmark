@@ -23,18 +23,19 @@ if int(threads) == 1:
 
 elif int(threads) == 2:
 	str = "parallel ::: ./sparse " + str(r)+" ./sparse "+str(r)
-	os.system("parallel ::: ./sparse " + str(r)+" ./sparse "+str(r))
 	print str
+	os.system(str)
+	
 
 elif int(threads) == 4:
 	str = "parallel ::: ./sparse " + str(r)+" ./sparse "+str(r) + " ./sparse "+str(r) + " ./sparse "+str(r)
-	os.system("parallel ::: ./sparse " + str(r)+" ./sparse "+str(r) + " ./sparse "+str(r) + " ./sparse "+str(r))
 	print str
+	os.system(str)
 
 elif int(threads) == 8:
 	str = "parallel ::: ./sparse " + str(r)+" ./sparse "+str(r) + " ./sparse "+str(r) + " ./sparse "+str(r) + " ./sparse " + str(r)+" ./sparse "+str(r) + " ./sparse "+str(r) + " ./sparse "+str(r)								
-	os.system("parallel ::: ./sparse " + str(r)+" ./sparse "+str(r) + " ./sparse "+str(r) + " ./sparse "+str(r) + " ./sparse " + str(r)+" ./sparse "+str(r) + " ./sparse "+str(r) + " ./sparse "+str(r))
 	print str
+	os.system(str)
 else:
 	print "error: incorrect input"
 	print "threads: " + str(threads)
