@@ -4,9 +4,13 @@ div = os.environ['DIV']
 threads = os.environ['THREAD']
 
 
+
 os.system("go build sparse.go")
 
 r = int(threads)*int(div)
+
+print r
+print type(r)
 
 if int(threads) == 1:
 	os.system("./sparse "+ str(div))	
