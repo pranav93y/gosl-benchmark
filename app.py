@@ -1,10 +1,8 @@
 import os
 
-#div = os.environ['DIV']
-#threads = os.environ['THREAD']
+div = os.environ['DIV']
+threads = os.environ['THREAD']
 
-div = 3
-threads = 3
 
 os.system("go build sparse.go")
 
