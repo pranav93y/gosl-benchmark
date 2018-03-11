@@ -3,6 +3,13 @@ import os
 div = os.environ['DIV']
 threads = os.environ['THREAD']
 
+print div
+print type(div)
+
+print threads
+print type(threads)
+
+
 
 os.system("go build sparse.go")
 
