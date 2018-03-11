@@ -13,7 +13,7 @@ print type(threads)
 
 os.system("go build sparse.go")
 
-r = threads*div
+r = int(threads)*int(div)
 
 print r
 print type(r)
