@@ -25,6 +25,3 @@ elif threads == 8:
 	print str
 else:
 	print "error: incorrect input"
-
-
-return
