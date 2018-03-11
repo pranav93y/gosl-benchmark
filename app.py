@@ -1,19 +1,20 @@
 import os
 
-div = os.environ['DIV']
-threads = os.environ['THREAD']
+#div = os.environ['DIV']
+#threads = os.environ['THREAD']
 
-
+div = 3
+threads = 3
 
 os.system("go build sparse.go")
 
-r = int(threads)*int(div)
+r = threads*div
 
 print r
 print type(r)
 
 if int(threads) == 1:
-	os.system("./sparse "+ str(div))	
+	os.system("./sparse "+ str(r))	
 
 elif int(threads) == 2:
 	str = "parallel ::: ./sparse " + str(r)+" ./sparse "+str(r)
@@ -31,5 +32,5 @@ elif int(threads) == 8:
 	print str
 else:
 	print "error: incorrect input"
-	print "threads: " + threads
-	print "div: "+ div
+	print "threads: " + str(threads)
+	print "div: "+ str(div)
