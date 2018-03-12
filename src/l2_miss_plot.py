@@ -6,6 +6,9 @@ import argparse
 ap = argparse.ArgumentParser(usage='Plot already normalized CSV data')
 ap.add_argument('--output', '-o', help='Output to file. Otherwise show.',
                 nargs='?')
+
+ap.add_argument('--name', '-n', help='Name of run giving the threads and div',
+                nargs='?')
 ap.add_argument('inf', nargs='?', default=sys.stdin, type=argparse.FileType('r'),
                 help='input CSV file')
 args = ap.parse_args()
@@ -44,7 +47,7 @@ for x, y in zip(l2_miss, insn):
 
 plt.xlabel('Time',  fontsize=18)
 plt.ylabel('L2 miss per Kilo Insn',  fontsize=18)
-plt.title('L2 miss per Kilo Insn vs Time',  fontsize=20)
+plt.title(args.name,  fontsize=20)
 plt.grid(True)
 plt.plot(timestamps, values, 'b-', label="L2 miss per Kilo Insn")
 leg = plt.legend()

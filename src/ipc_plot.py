@@ -6,14 +6,19 @@ import argparse
 ap = argparse.ArgumentParser(usage='Plot already normalized CSV data')
 ap.add_argument('--output', '-o', help='Output to file. Otherwise show.',
                 nargs='?')
+ap.add_argument('--name', '-n', help='Name of run giving the threads and div',
+                nargs='?')
+
 ap.add_argument('inf', nargs='?', default=sys.stdin, type=argparse.FileType('r'),
                 help='input CSV file')
 args = ap.parse_args()
 
 inf = args.inf
 
+name = args.name
 
 rc = csv.reader(inf)
+
 
 num = 0
 timestamps = []
@@ -45,7 +50,7 @@ for x, y in zip(insn, cyc):
 
 plt.xlabel('Time',  fontsize=18)
 plt.ylabel('IPC',  fontsize=18)
-plt.title('IPC vs Time',  fontsize=20)
+plt.title(name,  fontsize=20)
 plt.grid(True)
 plt.plot(timestamps, ipc, 'c-', label="IPC")
 leg = plt.legend()
