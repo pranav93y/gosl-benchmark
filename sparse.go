@@ -33,9 +33,6 @@ func main() {
       return
     }
 
-    fmt.Printf("input: %d\n", div)
-
-
 	// given the following matrix of complex numbers:
 	//      _                                                  _
 	//     |  19.73    12.11-i      5i        0          0      |
