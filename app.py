@@ -4,7 +4,7 @@ div = os.environ['DIV']
 threads = os.environ['THREAD']
 
 
-os.system("go build sparse.go")
+#os.system("go build sparse.go")
 
 r = int(threads)*int(div)
 
